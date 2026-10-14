@@ -399,7 +399,7 @@ export default function AdminDashboard({
     <div id="admin-dashboard-root" className="min-h-screen bg-gray-50 flex flex-col justify-between lg:pl-24">
       
       {/* HEADER CONTROLS */}
-      <header className="glass-card !fixed top-0 left-0 right-0 z-40 py-1.5 px-4 shadow-sm border-b border-white/30 bg-black !w-full !h-auto !rounded-none">
+      <header className="glass-card !fixed top-0 left-0 right-0 z-40 py-1.5 px-4 shadow-sm border-b border-white/30 bg-white/10 backdrop-blur-xs !w-full !h-auto !rounded-none">
         <div className="max-w-5xl mx-auto flex items-center justify-between lg:max-w-none lg:px-4">
           <div className="flex items-center gap-3">
             <GlassIcon icon={Shield} variant="rose" size="sm" />
