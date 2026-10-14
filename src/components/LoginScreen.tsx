@@ -235,14 +235,13 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
           id="login-card" 
           className="relative bg-white/85 backdrop-blur-2xl border border-slate-200/90 rounded-[2.25rem] p-7 sm:p-9 shadow-[0_20px_50px_-12px_rgba(234,179,8,0.14),0_8px_24px_rgba(0,0,0,0.03)] overflow-hidden"
         >
-          {/* Subtle Metallic Yellow Accent Line on top rim */}
-          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-300" />
+          {/* Subtle Metallic Yellow Accent Line on top rim 
+          <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-300" /> */}
 
           <div id="login-header" className="flex flex-col items-center mb-7">
             {/* App Logo in Matte Glass Frame with Metallic Yellow Border */}
             <div id="logo-image-wrapper" className="mb-4 relative">
-              <div className="absolute -inset-1 bg-gradient-to-r from-yellow-300 via-amber-300 to-yellow-400 rounded-2xl blur-xs opacity-70" />
-              <div className="relative w-16 h-16 rounded-2xl bg-white/95 backdrop-blur-xl border border-yellow-400/80 flex items-center justify-center shadow-md shadow-yellow-500/15 p-2 overflow-hidden">
+              <div className="relative w-16 h-16 rounded-2xl bg-white/95 backdrop-blur-xl flex items-center justify-center shadow-md">
                 <img
                   src="/icon-192.png"
                   alt="MVP Ledger App Logo"
@@ -259,11 +258,10 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
               </div>
             </div>
 
-            <h2 id="login-title" className="text-2xl font-black text-slate-900 tracking-tight text-center">MVP Finance Portal</h2>
-            <div className="mt-1.5 px-3 py-1 bg-yellow-100/70 backdrop-blur-md border border-yellow-300/80 rounded-full flex items-center gap-1.5 shadow-2xs">
-              <Sparkles className="h-3 w-3 text-yellow-700" />
-              <p id="login-subtitle" className="text-[10px] text-yellow-950 font-black tracking-wider uppercase text-center">Mission Vikram Prakalp</p>
-            </div>
+            <h2 id="login-title" className="text-2xl font-black text-slate-900 tracking-tight text-center">MVP Login Portal</h2>
+
+              <p id="login-subtitle" className="text-[10px] text-black/60 font-black tracking-wider uppercase text-center">Mission Vikram Prakalp</p>
+            
           </div>
 
           {error && (
@@ -316,17 +314,17 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
               {/* Metallic Yellow Primary Action Button (Zero orange) */}
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-yellow-400 via-amber-300 to-yellow-500 hover:from-yellow-300 hover:via-amber-200 hover:to-yellow-400 active:scale-[0.99] text-slate-950 font-black py-3.5 px-4 rounded-2xl transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-yellow-500/25 text-sm border border-yellow-200/60"
+                className="w-full bg-white/90 active:scale-[0.99] text-black font-black py-3.5 px-4 rounded-2xl transition-all cursor-pointer flex items-center justify-center gap-2 text-sm border"
                 disabled={isLoading}
-              >
+                >
                 {isLoading ? (
                   <>
-                    <Loader2 className="h-4 w-4 animate-spin text-slate-950" />
+                    <Loader2 className="h-4 w-4 animate-spin text-black" />
                     <span>Verifying...</span>
                   </>
                 ) : (
                   <>
-                    <KeyRound className="h-4 w-4 text-slate-950" />
+                    <KeyRound className="h-4 w-4 text-black" />
                     <span>Sign In</span>
                   </>
                 )}
