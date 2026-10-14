@@ -62,7 +62,7 @@ export default function HeaderSidebar({
         className="focus:outline-none rounded-xl cursor-pointer p-1 hover:bg-slate-100/80 transition-colors flex items-center justify-center"
         title="Open Navigation Menu"
       >
-        <GlassIcon icon={Menu} variant="black" size="sm" className="shadow-xs" notificationActive={chatUnread > 0} />
+        <GlassIcon icon={Menu} variant="black" size="sm" notificationActive={chatUnread > 0} />
       </button>
 
       {/* Slide-out Sidebar Drawer Overlay & Panel */}
@@ -96,7 +96,7 @@ export default function HeaderSidebar({
                 {/* Drawer Header */}
                 <div className="p-4 border-b border-slate-100 bg-black/10 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <div className="p-2 bg-black/10 text-black rounded-xl">
+                    <div className="p-2 bg-black text-white rounded-xl">
                       <UserIcon className="h-4 w-4" />
                     </div>
                     <div className="min-w-0">
