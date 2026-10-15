@@ -256,9 +256,9 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
   return (
     <div id="analytics-container" ref={containerRef} className="space-y-6">
       {/* Header with glassmorphism */}
-      <div className="bg-white border border-gray-100 p-5 rounded-2xl shadow-sm flex flex-col sm:flex-row justify-between sm:items-center gap-4 gsap-animate">
+      <div className="bg-white border border-black p-5 rounded-3xl shadow-sm flex flex-col sm:flex-row justify-between sm:items-center gap-4 gsap-animate">
         <div className="flex items-center gap-3">
-          <div className="bg-gray-950/5 text-gray-900 p-2.5 rounded-xl border border-gray-950/10">
+          <div className="bg-gray-950/5 text-gray-900 p-2.5 rounded-3xl border border-gray-950/10">
             <Activity className="h-5 w-5 text-gray-900" />
           </div>
           <div>
@@ -274,7 +274,7 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
           <button
             ref={buttonRef}
             onClick={() => setIsDatePickerOpen(true)}
-            className="flex items-center gap-2 bg-gray-950 hover:bg-gray-800 text-white text-xs font-bold px-4 py-2.5 rounded-xl transition-all cursor-pointer shadow-sm hover:scale-105 active:scale-95"
+            className="flex items-center gap-2 bg-gray-950 hover:bg-gray-800 text-white text-xs font-bold px-4 py-2.5 rounded-3xl transition-all cursor-pointer shadow-sm hover:scale-105 active:scale-95"
           >
             <Calendar className="h-4 w-4" />
             <span>{formatMonthLabel(selectedMonth)}</span>
@@ -286,7 +286,7 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
               {/* Dark backdrop overlay that dims the page and blocks all background interactions */}
               <div 
                 ref={backdropRef}
-                className="fixed inset-0 bg-black/40 z-[99999]"
+                className="fixed inset-0 ios-blur z-[99999]"
                 onClick={() => setIsDatePickerOpen(false)}
               />
               
@@ -300,27 +300,27 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
                 } : {}}
                 className={`
                   !fixed bottom-0 left-0 right-0 z-[100000] flex flex-col bg-white border-t border-gray-150 rounded-t-[24px] shadow-2xl p-5 max-h-[380px] pb-6 overscroll-y-contain
-                  sm:!fixed sm:bottom-auto sm:left-auto sm:right-auto sm:rounded-2xl sm:w-80 sm:max-h-[360px] sm:shadow-2xl sm:border sm:border-gray-200 sm:p-4 sm:pb-4 sm:rounded-b-2xl
+                  sm:!fixed sm:bottom-auto sm:left-auto sm:right-auto sm:rounded-3xl sm:w-80 sm:max-h-[360px] sm:shadow-2xl sm:border sm:border-gray-200 sm:p-4 sm:pb-4 sm:rounded-b-3xl
                 `}
               >
                 {/* Mobile Bottom Sheet drag handle */}
-                <div className="block sm:hidden w-12 h-1.5 bg-gray-300 rounded-full mx-auto mb-4" />
+                <div className="block sm:hidden w-12 h-1.5 bg-white rounded-full mx-auto mb-4" />
 
                 <div className="flex items-center justify-between border-b border-gray-150 pb-2.5 mb-2.5">
                   <div className="flex items-center gap-2">
-                    <div className="bg-gray-50 p-1.5 rounded-lg border border-gray-200">
-                      <Calendar className="h-4 w-4 text-gray-700" />
+                    <div className="bg-gray-50 p-1.5 rounded-full border border-gray-200">
+                      <Calendar className="h-4 w-4 text-black" />
                     </div>
                     <div>
                       <h3 className="text-xs font-black text-gray-900">Select Month</h3>
-                      <p className="text-[9px] text-gray-400 font-bold">Choose period to inspect</p>
+                      <p className="text-[9px] text-black font-bold">Choose period to inspect</p>
                     </div>
                   </div>
                   <button 
                     onClick={() => setIsDatePickerOpen(false)}
-                    className="text-gray-400 hover:text-gray-600 p-1 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
+                    className="text-black hover:text-gray-600 p-1 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer"
                   >
-                    <X className="h-4 w-4" />
+                    <X className="h-4 w-4"/>
                   </button>
                 </div>
 
@@ -335,14 +335,14 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
                       className={`w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-semibold flex items-center justify-between transition-colors cursor-pointer ${
                         selectedMonth === mStr 
                           ? 'bg-gray-950 text-white font-bold' 
-                          : 'hover:bg-gray-50 text-gray-700 border border-transparent hover:border-gray-200'
+                          : 'hover:bg-white text-black border border-transparent hover:border-gray-200'
                       }`}
                     >
                       <span>{formatMonthLabel(mStr)}</span>
                       {selectedMonth === mStr ? (
                         <CheckCircle2 className="h-4 w-4 text-white" />
                       ) : (
-                        <span className="text-[9px] text-gray-400 font-mono">{mStr}</span>
+                        <span className="text-[9px] text-black font-mono">{mStr}</span>
                       )}
                     </button>
                   ))}
@@ -351,7 +351,7 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
                 <div className="border-t border-white/20 pt-2.5 mt-2.5 flex justify-end">
                   <button
                     onClick={() => setIsDatePickerOpen(false)}
-                    className="bg-white/40 hover:bg-white/60 text-gray-800 text-[10px] font-bold px-3 py-1.5 rounded-xl cursor-pointer transition-colors border border-white/35"
+                    className="bg-black/10 hover:bg-white/60 text-black text-[10px] font-bold px-3 py-1.5 rounded-xl cursor-pointer transition-colors border border-white/35"
                   >
                     Close
                   </button>
@@ -364,9 +364,9 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
       </div>
 
       {/* METRICS GRID with glassmorphism */}
-      <div id="metrics-grid" className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+      <div id="metrics-grid" className="grid grid-cols-2 lg:grid-cols-4 gap-4 rounded-3xl">
         {/* Total Monthly Income */}
-        <div className="bg-white border border-gray-150 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between gsap-animate">
+        <div className="bg-white border border-gray-150 p-5 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between gsap-animate">
           <div>
             <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wide mb-1">Monthly Inflow</p>
             <h3 className="text-xl font-black text-emerald-600 tracking-tight">₹{monthlyIncome.toLocaleString('en-IN')}</h3>
@@ -378,7 +378,7 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
         </div>
 
         {/* Total Monthly Expenses */}
-        <div className="bg-white border border-gray-150 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between gsap-animate">
+        <div className="bg-white border border-gray-150 p-5 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between gsap-animate">
           <div>
             <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wide mb-1">Monthly Outflow</p>
             <h3 className="text-xl font-black text-rose-600 tracking-tight">₹{monthlyExpense.toLocaleString('en-IN')}</h3>
@@ -390,7 +390,7 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
         </div>
 
         {/* Cumulative Reserves Continued */}
-        <div className="bg-gray-50 border border-gray-150 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between gsap-animate">
+        <div className="bg-gray-50 border border-gray-150 p-5 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between gsap-animate">
           <div>
             <p className="text-[10px] font-bold text-gray-500 uppercase tracking-wide mb-1">Cumulative Reserves</p>
             <h3 className={`text-xl font-black tracking-tight ${netBalance >= 0 ? 'text-gray-900' : 'text-rose-700'}`}>
@@ -404,7 +404,7 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
         </div>
 
         {/* Savings Efficiency */}
-        <div className="bg-white border border-gray-150 p-5 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between gsap-animate">
+        <div className="bg-white border border-gray-150 p-5 rounded-3xl shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between gsap-animate">
           <div>
             <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wide mb-1">Savings Rate</p>
             <h3 className="text-xl font-black text-gray-900 tracking-tight">{savingsRate.toFixed(1)}%</h3>
@@ -418,7 +418,7 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
 
       {/* BUDGET STATUS TRACKER with glassmorphism */}
       {(org?.monthlyBudget || org?.yearlyBudget) ? (
-        <div id="budget-utilization-panel" className="bg-white border border-gray-100 p-5 rounded-2xl shadow-sm space-y-4 gsap-animate">
+        <div id="budget-utilization-panel" className="bg-white border border-black p-5 rounded-3xl shadow-sm space-y-4 gsap-animate">
           <div className="flex items-center justify-between border-b border-gray-100/50 pb-2.5">
             <h3 className="text-xs font-bold text-gray-800 uppercase tracking-wide flex items-center gap-1.5">
               <Activity className="h-4 w-4 text-gray-600" />
@@ -536,7 +536,7 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
       {/* CHARTS LAYER with glassmorphism */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Trend Analysis */}
-        <div className="bg-white border border-gray-150 p-5 rounded-2xl shadow-sm gsap-animate">
+        <div className="bg-white border border-gray-150 p-5 rounded-3xl shadow-sm gsap-animate">
           <h3 className="text-xs font-bold text-gray-800 uppercase tracking-wide mb-4 flex items-center gap-1.5">
             <BarChart2 className="h-4 w-4 text-gray-500" />
             Daily Flows inside {formatMonthLabel(selectedMonth)} (Inflow vs Outflow)
@@ -564,7 +564,7 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
         </div>
 
         {/* Transaction Type Breakdown */}
-        <div className="bg-white border border-gray-150 p-5 rounded-2xl shadow-sm gsap-animate">
+        <div className="bg-white border border-gray-150 p-5 rounded-3xl shadow-sm gsap-animate">
           <h3 className="text-xs font-bold text-gray-800 uppercase tracking-wide mb-4 flex items-center gap-1.5">
             <CreditCard className="h-4 w-4 text-gray-500" />
             Modes of Transaction in {formatMonthLabel(selectedMonth)}
@@ -591,7 +591,7 @@ export default function AnalyticsView({ records }: AnalyticsViewProps) {
         </div>
 
         {/* Expense Purpose Breakdown */}
-        <div className="bg-white border border-gray-150 p-5 rounded-2xl shadow-sm lg:col-span-2 gsap-animate">
+        <div className="bg-white border border-gray-150 p-5 rounded-3xl shadow-sm lg:col-span-2 gsap-animate">
           <h3 className="text-xs font-bold text-gray-800 uppercase tracking-wide mb-4 flex items-center gap-1.5">
             <PieIcon className="h-4 w-4 text-gray-500" />
             Organization Expense Distribution (Top 5 Purposes)

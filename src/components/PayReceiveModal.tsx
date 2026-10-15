@@ -401,7 +401,7 @@ export default function PayReceiveModal({ isOpen, onClose, currentUser, onRecord
         <div style={{ zIndex: 100000000 }} className="fixed inset-0 flex items-end sm:items-center justify-center">
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={step === 'form' ? undefined : handleClose}
-            className="absolute inset-0 bg-slate-900/60 backdrop-blur-xs" />
+            className="absolute inset-0 ios-blur" />
 
           <motion.div
             initial={{ y: 60, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 60, opacity: 0 }}
@@ -433,7 +433,7 @@ export default function PayReceiveModal({ isOpen, onClose, currentUser, onRecord
 
               {step === 'home' && (
                 <div className="py-8 text-center space-y-3">
-                  <div className="mx-auto h-16 w-16 rounded-2xl bg-indigo-100 text-indigo-700 flex items-center justify-center"><QrCode className="h-8 w-8" /></div>
+                  <div className="mx-auto h-16 w-16 rounded-full bg-black text-white flex items-center justify-center"><QrCode className="h-8 w-8" /></div>
                   <h4 className="text-base font-bold text-slate-900">UPI Payments</h4>
                   <p className="text-xs text-slate-500 max-w-xs mx-auto">Scan a QR to pay a vendor, or show your QR to receive a donation. Details are auto-filled into the ledger entry afterwards.</p>
                   {bank ? (
@@ -474,7 +474,7 @@ export default function PayReceiveModal({ isOpen, onClose, currentUser, onRecord
               {step === 'payAmount' && payee && (
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-2xl">
-                    <div className="h-11 w-11 rounded-full bg-indigo-600 text-white font-bold flex items-center justify-center">{payee.name.charAt(0).toUpperCase()}</div>
+                    <div className="h-11 w-11 rounded-full bg-black text-white font-bold flex items-center justify-center">{payee.name.charAt(0).toUpperCase()}</div>
                     <div className="min-w-0">
                       <p className="text-sm font-bold text-slate-900 truncate">{payee.name}</p>
                       <p className="text-[11px] text-slate-500 truncate">{payee.vpa}</p>
@@ -489,7 +489,7 @@ export default function PayReceiveModal({ isOpen, onClose, currentUser, onRecord
                     <label className="block text-[10px] font-bold uppercase tracking-wider text-slate-500 mb-1.5">Purpose / Note</label>
                     <input type="text" value={note} onChange={e => setNote(e.target.value)} placeholder="e.g. Study material printing" className={inputCls} />
                   </div>
-                  <button onClick={submitAmount} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl cursor-pointer">Proceed to Pay</button>
+                  <button onClick={submitAmount} className="w-full bg-black hover:bg-black/20 text-white font-bold py-3 rounded-3xl border-black cursor-pointer">Proceed to Pay</button>
                 </div>
               )}
 
@@ -511,7 +511,7 @@ export default function PayReceiveModal({ isOpen, onClose, currentUser, onRecord
                   <button onClick={() => { setError(null); setStep('bankDetails'); }}
                     className="w-full p-3 bg-slate-50 hover:bg-indigo-50 border border-slate-200 hover:border-indigo-200 rounded-xl flex items-center justify-between cursor-pointer text-left">
                     <div className="flex items-center gap-3">
-                      <div className="p-2 bg-indigo-100 text-indigo-700 rounded-lg"><Landmark className="h-5 w-5" /></div>
+                      <div className="p-2 bg-black text-white rounded-3xl"><Landmark className="h-5 w-5" /></div>
                       <div>
                         <span className="text-sm font-bold text-slate-800 block">{DEMO_BANK}</span>
                         <span className="text-[10px] text-slate-500">Inter palnet bank</span>
@@ -525,7 +525,7 @@ export default function PayReceiveModal({ isOpen, onClose, currentUser, onRecord
               {step === 'bankDetails' && (
                 <div className="space-y-4">
                   <div className="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-2xl">
-                    <div className="p-2 bg-indigo-100 text-indigo-700 rounded-lg"><Landmark className="h-5 w-5" /></div>
+                    <div className="p-2 bg-black text-white rounded-3xl"><Landmark className="h-5 w-5" /></div>
                     <span className="text-sm font-bold text-slate-800">{DEMO_BANK}</span>
                   </div>
                   <div>
@@ -538,7 +538,7 @@ export default function PayReceiveModal({ isOpen, onClose, currentUser, onRecord
                     <input type="text" inputMode="numeric" maxLength={6} value={atm6} onChange={e => setAtm6(e.target.value.replace(/\D/g, ''))}
                       placeholder="6 digits" className={inputCls + ' tracking-widest'} />
                   </div>
-                  <button onClick={submitBankDetails} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 rounded-xl cursor-pointer">Add Account</button>
+                  <button onClick={submitBankDetails} className="w-full bg-black hover:bg-black/20 text-white font-bold py-3 rounded-3xl border-1 border-black cursor-pointer">Add Account</button>
                 </div>
               )}
 
@@ -625,10 +625,10 @@ export default function PayReceiveModal({ isOpen, onClose, currentUser, onRecord
             {/* Bottom action bar: Pay | Receive */}
             {step === 'home' && (
               <div className="grid grid-cols-2 gap-3 p-4 m-4 border-t border-slate-100 shrink-0 safe-bottom">
-                <button onClick={startPay} className="py-3.5 rounded-2xl bg-rose-600 hover:bg-white hover:text-rose-600 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-sm cursor-pointer">
+                <button onClick={startPay} className="py-3.5 rounded-2xl bg-rose-600 hover:bg-white hover:text-rose-600 text-white hover:border hover:border-rose-600 font-bold text-sm flex items-center justify-center gap-2 shadow-sm cursor-pointer">
                   <ScanLine className="h-4 w-4" /> Pay <ArrowUpRight className="h-4 w-4" />
                 </button>
-                <button onClick={startReceive} className="py-3.5 rounded-2xl bg-emerald-600 hover:bg-white hover:text-emerald-600 text-white font-bold text-sm flex items-center justify-center gap-2 shadow-sm cursor-pointer">
+                <button onClick={startReceive} className="py-3.5 rounded-2xl bg-emerald-600 hover:bg-white hover:text-emerald-600 text-white hover:border hover:border-emerald-600 font-bold text-sm flex items-center justify-center gap-2 shadow-sm cursor-pointer">
                   <QrCode className="h-4 w-4" /> Receive <ArrowDownLeft className="h-4 w-4" />
                 </button>
               </div>

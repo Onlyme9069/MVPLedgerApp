@@ -219,7 +219,7 @@ export default function FinanceManagerDashboard({
     <div id="finance-dashboard-root" className="min-h-screen bg-gray-50 flex flex-col justify-between lg:pl-24">
       
       {/* HEADER CONTROLS */}
-      <header className="glass-card !fixed top-0 left-0 right-0 z-40 py-1.5 px-4 shadow-sm border-b border-white/30 bg-white/45 backdrop-blur-md !w-full !h-auto !rounded-none">
+      <header className="glass-card !fixed top-0 left-0 right-0 z-40 py-1.5 px-4 shadow-sm border-b border-white/30 !w-full !h-auto !rounded-none">
         <div className="max-w-5xl mx-auto flex items-center justify-between lg:max-w-none lg:px-4">
           <div className="flex items-center gap-3">
             <GlassIcon icon={TrendingUp} variant="emerald" size="sm" />
@@ -432,7 +432,7 @@ export default function FinanceManagerDashboard({
       </main>
 
       {/* BOTTOM NAVIGATION DRAWER (MOBILE-FIRST) */}
-      <nav id="bottom-navigation-drawer" className="glass-card !fixed bottom-0 left-0 right-0 py-2 px-6 z-20 shadow-2xl border-t border-white/30 backdrop-blur-xl !rounded-t-3xl !rounded-b-none !w-full !h-auto lg:!top-[48px] lg:!right-auto lg:!w-24 lg:!rounded-none lg:border-t-0 lg:border-r lg:border-white/40 lg:py-6 lg:px-2 lg:!bg-white/80 lg:shadow-lg">
+      <nav id="bottom-navigation-drawer" className="glass-card !fixed bottom-0 left-0 right-0 py-2 px-6 z-20 shadow-2xl border-t !rounded-t-3xl !rounded-b-none !w-full !h-auto lg:!top-[48px] lg:!right-auto lg:!w-24 lg:!rounded-none lg:border-t-0 lg:border-r lg:border-white/40 lg:py-6 lg:px-2 lg:!bg-white/80 lg:shadow-lg">
         <div className="max-w-md mx-auto flex justify-between items-center lg:max-w-none lg:flex-col lg:justify-start lg:gap-7">
           <button
             onClick={() => {
@@ -522,7 +522,7 @@ export default function FinanceManagerDashboard({
 
       {/* Record Deletion Confirmation Modal */}
       {deleteConfirmRecordId && (
-        <div className="fixed inset-0 bg-gray-900/50 flex items-center justify-center p-4 z-50 animate-in fade-in duration-200">
+        <div className="fixed inset-0 ios-blur flex items-center justify-center p-4 z-50 animate-in fade-in duration-200">
           <div className="bg-white rounded-2xl border border-gray-100 shadow-xl max-w-sm w-full p-6 space-y-4">
             <div className="flex items-center gap-3 text-rose-600">
               <div className="bg-rose-50 p-2.5 rounded-xl">

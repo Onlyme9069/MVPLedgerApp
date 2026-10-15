@@ -233,7 +233,7 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
         {/* Matte Frosted Glass Card Container */}
         <div 
           id="login-card" 
-          className="relative bg-white/85 backdrop-blur-2xl border border-slate-200/90 rounded-[2.25rem] p-7 sm:p-9 shadow-[0_20px_50px_-12px_rgba(234,179,8,0.14),0_8px_24px_rgba(0,0,0,0.03)] overflow-hidden"
+          className=" relative border-[3px] border-black/20 rounded-[2.25rem] p-7 sm:p-9 shadow-[0_20px_50px_-12px_rgba(234,179,8,0.14),0_8px_24px_rgba(0,0,0,0.03)] overflow-hidden"
         >
           {/* Subtle Metallic Yellow Accent Line on top rim 
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-yellow-300 via-yellow-400 to-amber-300" /> */}
@@ -241,11 +241,11 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
           <div id="login-header" className="flex flex-col items-center mb-7">
             {/* App Logo in Matte Glass Frame with Metallic Yellow Border */}
             <div id="logo-image-wrapper" className="mb-4 relative">
-              <div className="relative w-16 h-16 rounded-2xl bg-white/95 backdrop-blur-xl flex items-center justify-center shadow-md">
+              <div className="relative w-16 h-16 rounded-full flex items-center justify-center shadow-md">
                 <img
                   src="/icon-192.png"
                   alt="MVP Ledger App Logo"
-                  className="w-full h-full object-contain rounded-xl"
+                  className="w-full h-full object-contain rounded-full"
                   onError={(e) => {
                     (e.currentTarget as HTMLElement).style.display = 'none';
                     const fallback = document.getElementById('logo-fallback-icon');
@@ -265,7 +265,7 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
           </div>
 
           {error && (
-            <div id="login-error" className="bg-rose-50/90 backdrop-blur-md text-rose-700 text-xs font-semibold p-3.5 rounded-2xl border border-rose-200/80 mb-6 shadow-sm flex items-center gap-2">
+            <div id="login-error" className="bg-rose-50/90 text-rose-700 text-xs font-semibold p-3.5 rounded-2xl border border-rose-200/80 mb-6 shadow-sm flex items-center gap-2">
               <AlertCircle className="h-4 w-4 shrink-0 text-rose-500" />
               <span>{error}</span>
             </div>
@@ -281,7 +281,7 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
                 placeholder="e.g. aarthik1"
                 value={userId}
                 onChange={(e) => setUserId(e.target.value)}
-                className="w-full bg-slate-50/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3.5 focus:outline-none focus:ring-2 focus:ring-yellow-400/40 focus:border-yellow-400 focus:bg-white text-slate-900 font-bold placeholder-slate-400/80 transition-all text-sm shadow-inner"
+                className="w-full bg-slate-50/90 border border-slate-200/90 rounded-2xl p-3.5 focus:outline-none focus:ring-2 focus:ring-yellow-400/40 focus:border-yellow-400 focus:bg-white text-slate-900 font-bold placeholder-slate-400/80 transition-all text-sm shadow-inner"
                 disabled={isLoading}
               />
             </div>
@@ -296,7 +296,7 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full bg-slate-50/90 backdrop-blur-md border border-slate-200/90 rounded-2xl p-3.5 pr-12 focus:outline-none focus:ring-2 focus:ring-yellow-400/40 focus:border-yellow-400 focus:bg-white text-slate-900 font-bold placeholder-slate-400/80 transition-all text-sm shadow-inner"
+                  className="w-full bg-slate-50/90 border border-slate-200/90 rounded-2xl p-3.5 pr-12 focus:outline-none focus:ring-2 focus:ring-yellow-400/40 focus:border-yellow-400 focus:bg-white text-slate-900 font-bold placeholder-slate-400/80 transition-all text-sm shadow-inner"
                   disabled={isLoading}
                 />
                 <button
@@ -314,7 +314,7 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
               {/* Metallic Yellow Primary Action Button (Zero orange) */}
               <button
                 type="submit"
-                className="w-full bg-white/90 active:scale-[0.99] text-black font-black py-3.5 px-4 rounded-2xl transition-all cursor-pointer flex items-center justify-center gap-2 text-sm border"
+                className="w-full bg-white active:scale-[0.99] text-black font-black py-3.5 px-4 rounded-2xl transition-all cursor-pointer flex items-center justify-center gap-2 text-sm shadow-md hover:bg-white/95"
                 disabled={isLoading}
                 >
                 {isLoading ? (
@@ -337,7 +337,7 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
                     triggerHapticFeedback('light');
                     handleBiometricClick();
                   }}
-                  className="w-full bg-slate-50/80 hover:bg-white active:scale-[0.99] backdrop-blur-md border border-slate-200/90 text-slate-800 font-bold py-3 px-4 rounded-2xl transition-all cursor-pointer flex items-center justify-center gap-2 shadow-xs text-xs"
+                  className="w-full bg-slate-50/80 hover:bg-white active:scale-[0.99] border border-slate-200/90 text-slate-800 font-bold py-3 px-4 rounded-2xl transition-all cursor-pointer flex items-center justify-center gap-2 shadow-xs text-xs"
                 >
                   <Fingerprint className="h-4 w-4 text-yellow-600" />
                   <span>Biometric Quick Sign-In</span>
@@ -353,8 +353,8 @@ export default function LoginScreen({ onLoginSuccess }: LoginScreenProps) {
 
       {/* BIOMETRIC SIMULATION MODAL - Matte Glass Finish */}
       {isBiometricModalOpen && (
-        <div id="biometric-modal-overlay" className="fixed inset-0 bg-slate-950/30 backdrop-blur-xs flex items-center justify-center p-4 z-50 animate-in fade-in duration-200">
-          <div id="biometric-modal-card" className="bg-white/95 backdrop-blur-2xl border border-slate-200/90 rounded-3xl shadow-2xl max-w-sm w-full p-6 relative flex flex-col items-center text-center animate-in zoom-in-95 duration-250">
+        <div id="biometric-modal-overlay" className="fixed inset-0 bg-slate-950/30 ios-blur flex items-center justify-center p-4 z-50 animate-in fade-in duration-200">
+          <div id="biometric-modal-card" className=" bg-white rounded-3xl shadow-2xl max-w-sm w-full p-6 relative flex flex-col items-center text-center animate-in zoom-in-95 duration-250">
             <button 
               type="button"
               onClick={() => setIsBiometricModalOpen(false)}

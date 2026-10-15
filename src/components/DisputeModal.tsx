@@ -89,7 +89,7 @@ export default function DisputeModal({
   return (
     <motion.div 
       id="dispute-modal-overlay" 
-      className="fixed inset-0 bg-gray-900/40 backdrop-blur-xl flex  items-center justify-center p-4 z-50"
+      className="fixed inset-0 ios-blur flex  items-center justify-center p-4 z-50"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

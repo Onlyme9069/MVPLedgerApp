@@ -272,7 +272,7 @@ export default function NoticesPanel({
       </div>
 
       {deleteId && (
-        <div className="fixed inset-0 z-[100000000] flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs" onClick={() => setDeleteId(null)}>
+        <div className="fixed inset-0 z-[100000000] flex items-center justify-center p-4 ios-blur" onClick={() => setDeleteId(null)}>
           <div className="bg-white rounded-2xl p-5 max-w-xs w-full shadow-2xl space-y-4" onClick={e => e.stopPropagation()}>
             <div>
               <h3 className="text-sm font-bold text-gray-900">Delete this notice?</h3>

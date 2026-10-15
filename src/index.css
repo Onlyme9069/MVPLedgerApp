@@ -171,5 +171,5 @@ button, nav, header, .user-select-none {
 .ios-bubble.tail-recv::before { left: -7px; border-left: 18px solid #e9e9eb; border-bottom-right-radius: 16px 14px; transform: translate(0, -2px); }
 .ios-bubble.tail-recv::after { left: -26px; width: 26px; background: #fff; border-bottom-right-radius: 10px; transform: translate(30px, -2px); }
 .ios-chat { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
-.ios-blur { background: rgba(249, 249, 249, 0.82); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
+.ios-blur { background: rgba(0, 0, 0, 0.336); backdrop-filter: saturate(1%) blur(1.5px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
 .ios-scroll { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }

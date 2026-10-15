@@ -184,7 +184,7 @@ const Bubble = memo(function Bubble({ msg, mine, showName, tail, gapTop, flash, 
             <motion.span
               key={pop}
               initial={{ scale: 0.3, opacity: 1 }} animate={{ scale: 1.6, opacity: 0 }} transition={{ duration: 0.7, ease: 'easeOut' }}
-              className="absolute inset-0 flex items-center justify-center text-[34px] pointer-events-none"
+              className="absolute inset-0 flex  items-center justify-center text-[34px] pointer-events-none"
             >❤️</motion.span>
           )}
         </div>
@@ -458,7 +458,7 @@ export default function ChatWidget({ currentUser, isOpen, setIsOpen }: ChatWidge
           <motion.div
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.18 }}
             onClick={() => setOpen(false)}
-            className="absolute inset-0 bg-black/40 backdrop-blur-[10px]"
+            className="absolute inset-0 ios-blur"
           />
           <motion.div
             initial={desktop ? { opacity: 0, scale: 0.97 } : { y: '100%' }}
@@ -733,7 +733,7 @@ export default function ChatWidget({ currentUser, isOpen, setIsOpen }: ChatWidge
               {menuMsg && (
                 <motion.div
                   initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.15 }}
-                  className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-3 px-8 bg-black/30 backdrop-blur-md"
+                  className="absolute inset-0 z-30 flex flex-col items-center justify-center gap-3 px-8 ios-blur"
                   onClick={() => setMenuMsg(null)}
                 >
                   <motion.div

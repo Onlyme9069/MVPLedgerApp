@@ -68,7 +68,7 @@ export default function PwaInstallManager() {
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 50 }}
-            className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-md z-40 bg-slate-900/95 text-white p-3.5 rounded-2xl shadow-2xl border border-emerald-500/30 backdrop-blur-md flex items-center justify-between gap-3"
+            className="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-4 sm:max-w-md z-40 bg-slate-900/95 text-white p-3.5 rounded-2xl shadow-2xl border border-emerald-500/30 ios-blur flex items-center justify-between gap-3"
           >
             <div className="flex items-center gap-3">
               <div className="p-2.5 bg-emerald-500/20 text-emerald-400 rounded-xl shrink-0">
@@ -105,7 +105,7 @@ export default function PwaInstallManager() {
       {/* Manual WebAPK Setup Guide Modal */}
       <AnimatePresence>
         {showGuideModal && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 ios-blur">
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}

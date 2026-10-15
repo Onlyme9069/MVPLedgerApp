@@ -25,7 +25,7 @@ export default function RecordDetailsModal({
   return (
     <motion.div 
       id="record-details-modal-overlay" 
-      className="fixed inset-0 bg-gray-900/40 backdrop-blur-xl flex items-center justify-center p-4 z-50"
+      className="fixed inset-0 ios-blur flex items-center justify-center p-4 z-50"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
@@ -70,7 +70,7 @@ export default function RecordDetailsModal({
         </div>
 
         {/* Main Info Amount Card */}
-        <div className={`p-5 rounded-2xl flex items-center justify-between shadow-xs ${
+        <div className={`p-5 rounded-3xl flex items-center justify-between shadow-xs ${
           record.transactionNature === 'Income' ? 'bg-emerald-50/50 border border-emerald-100/30' : 'bg-rose-50/50 border border-rose-100/30'
         }`}>
           <div className="min-w-0">
@@ -207,7 +207,7 @@ export default function RecordDetailsModal({
           )}
           <button
             onClick={onClose}
-            className="w-full py-3 bg-gray-950/80 hover:bg-gray-950/90 text-white backdrop-blur-md font-bold text-xs rounded-2xl tracking-wide uppercase transition-colors cursor-pointer"
+            className="w-full py-3 bg-black hover:bg-black/70 text-white font-bold text-xs rounded-3xl tracking-wide uppercase transition-colors cursor-pointer"
           >
             Close Inspector
           </button>

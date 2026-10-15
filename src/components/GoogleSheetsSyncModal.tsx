@@ -80,7 +80,7 @@ export default function GoogleSheetsSyncModal({ isOpen, onClose, currentUser }: 
   const rows = values.slice(1);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-slate-900/60 backdrop-blur-sm">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 ios-blur">
       <motion.div initial={{ opacity: 0, scale: 0.97, y: 10 }} animate={{ opacity: 1, scale: 1, y: 0 }} className="bg-white rounded-2xl max-w-6xl w-full max-h-[92vh] shadow-2xl border border-slate-200 relative flex flex-col overflow-hidden">
         <div className="flex items-center justify-between gap-3 p-4 sm:p-5 border-b border-slate-100 shrink-0">
           <div className="flex items-center gap-3 min-w-0">
