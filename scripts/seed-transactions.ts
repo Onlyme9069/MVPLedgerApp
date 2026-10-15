@@ -148,7 +148,7 @@ async function main() {
     chosen.sort(() => Math.random() - 0.5);
 
     // Spend target: 80-88% of the annual budget, minus anything already spent this year.
-    const spendTarget = Math.max(0, Math.round(budget * rnd(0.80, 0.88) / 10) * 10 - Number(existingExpense));
+    const spendTarget = Math.max(0, Math.round(budget * rnd(0.88, 0.100) / 10) * 10 - Number(existingExpense));
     const expenseCats = chosen.filter(c => c.nature === 'Expense');
     const incomeCats = chosen.filter(c => c.nature === 'Income');
     const expenseAmts = distribute(expenseCats, spendTarget);
