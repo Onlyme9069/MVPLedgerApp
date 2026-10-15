@@ -72,11 +72,11 @@ button, nav, header, .user-select-none {
 }
 
 .glass-card {
-  background-color: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  background-color: rgba(255, 255, 255, 0.056);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.25);
+  border: 1px solid rgb(237, 237, 237);
   box-shadow: 
     0 8px 32px rgba(0, 0, 0, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.5),
@@ -159,7 +159,6 @@ button, nav, header, .user-select-none {
   animation: float-glow 8s ease-in-out infinite;
 }
 
-
 /* ---------- iOS-style chat bubbles ---------- */
 .ios-bubble { position: relative; }
 .ios-bubble.tail-sent::before,
@@ -171,5 +170,6 @@ button, nav, header, .user-select-none {
 .ios-bubble.tail-recv::before { left: -7px; border-left: 18px solid #e9e9eb; border-bottom-right-radius: 16px 14px; transform: translate(0, -2px); }
 .ios-bubble.tail-recv::after { left: -26px; width: 26px; background: #fff; border-bottom-right-radius: 10px; transform: translate(30px, -2px); }
 .ios-chat { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Inter', system-ui, sans-serif; -webkit-tap-highlight-color: transparent; }
-.ios-blur { background: rgba(0, 0, 0, 0.336); backdrop-filter: saturate(1%) blur(1.5px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
+.ios-blur { background: rgba(0, 0, 0, 0.333); backdrop-filter: saturate(10%) blur(1.5px); -webkit-backdrop-filter: saturate(10%) blur(1.5px); }
 .ios-scroll { overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+

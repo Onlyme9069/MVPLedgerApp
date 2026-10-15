@@ -81,7 +81,7 @@ export default function HeaderSidebar({
                 transition={{ duration: 0.2 }}
                 onClick={() => setIsOpen(false)}
                 style={{ zIndex: 1 }}
-                className="absolute inset-0 bg-white-900/90 ios-blur"
+                className="absolute inset-0 ios-blur"
               />
 
               {/* Right Drawer Panel */}

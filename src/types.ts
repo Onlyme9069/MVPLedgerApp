@@ -1,4 +1,4 @@
-export type UserRole = 'Super Admin' | 'Admin' | 'Finance Manager' | 'Aarthik Pramukh' | 'Viewer';
+export type UserRole = 'Super Admin' | 'Admin' | 'Finance Manager' | 'Viewer';
 
 export interface User {
   id: string; // Document ID
